@@ -1,0 +1,22 @@
+.history {
+    display: flex;
+    justify-content: space-between;
+}
+
+.history .education, .history .work-history {
+    width: 48%;
+}
+
+.history .card {
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.history .card h3 {
+    margin-top: 0;
+}
+.contactCard{
+    width: 300px;
+}

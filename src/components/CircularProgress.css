@@ -1,0 +1,29 @@
+
+.circular-progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-bg {
+    stroke-width: 8;
+}
+
+.circle-progress {
+    stroke-width: 8;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.percentage-text {
+    font-size: 1rem;
+    fill: #ff4a4a;
+}
+
+.label {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}

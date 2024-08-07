@@ -1,38 +1,52 @@
 .App {
   text-align: center;
+  background-color: #333333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.leftSide{
+  background-color: rgb(207, 202, 202);
+  width: 300px;
+  height: 1300px;
+  margin-left: 150px;
+}
+.flex-1{
+  flex: 1;
+}
+.skill-bar {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.skill-info {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  margin-bottom: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.skill-name {
+  font-weight: bold;
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.progress {
+  background-color: #ff6b6b;
+  height: 10px;
+  border-radius: 5px;
+}
+.homeImg{
+  width: 60%;
+  height: 30%;
+
+}
+.smallImg{
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  object-fit: cover;
 }
