@@ -1,8 +1,12 @@
 import './App.css';
 import Toolbar from "./components/Toolbar";
 import CircularProgress from "./components/CircularProgress";
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Content from "./components/Content";
+import io from 'socket.io-client';
+import axios from 'axios';
+
+const socket = io('http://localhost:5000');
 
 function SkillBar({skill, percentage}) {
     return (
@@ -20,6 +24,37 @@ function SkillBar({skill, percentage}) {
 
 function App() {
     const [selectedSection, setSelectedSection] = useState('home');
+    const [messages, setMessages] = useState([]);
+    const [message, setMessage] = useState('');
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/messages')
+            .then(response => setMessages(response.data));
+
+        socket.on('message', message => {
+            setMessages(prevMessages => [message, ...prevMessages]);
+        });
+
+        socket.on('deleteMessage', id => {
+            setMessages(prevMessages => prevMessages.filter(message => message._id !== id));
+        });
+
+        return () => {
+            socket.off('message');
+            socket.off('deleteMessage');
+        };
+    }, []);
+
+    const handleSendMessage = async () => {
+        if (message.trim()) {
+            await axios.post('http://localhost:5000/messages', { user: 'User', text: message });
+            setMessage('');
+        }
+    };
+
+    const handleDeleteMessage = async (id) => {
+        await axios.delete(`http://localhost:5000/messages/${id}`);
+    };
 
     const handleMenuClick = (section) => {
         setSelectedSection(section);
@@ -63,7 +98,14 @@ function App() {
                         ))}
                     </div>
                 </div>
-                <Content section={selectedSection}/>
+                <Content
+                    section={selectedSection}
+                    messages={messages}
+                    message={message}
+                    setMessage={setMessage}
+                    handleSendMessage={handleSendMessage}
+                    handleDeleteMessage={handleDeleteMessage}
+                />
 
             </div>
 
