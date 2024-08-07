@@ -50,3 +50,67 @@
   border-radius: 30px;
   object-fit: cover;
 }
+
+.user-input {
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+}
+
+.user-input input {
+  padding: 8px;
+  font-size: 14px;
+  width: 200px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+.user-prompt {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.user-prompt input {
+  padding: 8px;
+  font-size: 14px;
+  width: 200px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.user-prompt button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-prompt button:hover {
+  background-color: #0056b3;
+}
+.messages-container {
+  height: 400px; /* Adjust the height as needed */
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.message-time {
+  font-size: 0.8em;
+  color: #888;
+}

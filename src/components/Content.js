@@ -7,13 +7,13 @@ import Chat from "../components/Chat";
 
 // Import other sections if needed
 
-function Content({ section, messages, message, setMessage, handleSendMessage, handleDeleteMessage }) {
+function Content({ section, messages, message, setMessage, handleSendMessage, handleDeleteMessage, user }) {
     return (
         <div className="content">
-            {section === 'home' && <Home/>}
-            {section === 'portfolio' && <Portfolio/>}
+            {section === 'home' && <Home />}
+            {section === 'portfolio' && <Portfolio />}
             {section === 'history' && <History />}
-            {section === 'contact' && <Contact/>}
+            {section === 'contact' && <Contact />}
             {section === 'chat' && (
                 <Chat
                     messages={messages}
@@ -21,6 +21,7 @@ function Content({ section, messages, message, setMessage, handleSendMessage, ha
                     setMessage={setMessage}
                     handleSendMessage={handleSendMessage}
                     handleDeleteMessage={handleDeleteMessage}
+                    user={user} // CHANGED: Pass user to Chat
                 />
             )}
         </div>
