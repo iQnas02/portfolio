@@ -1,6 +1,7 @@
 
 .toolbar-container {
-    position: relative;
+    position: fixed;
+    right: 0;
 }
 
 .menu-icon {

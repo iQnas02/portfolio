@@ -1,15 +1,17 @@
 .chat-container {
     display: flex;
     flex-direction: column;
-    height: 70%;
-
+    height: 50%;
+    width: 600px;
+    overflow: auto;
 }
 
 .messages {
     flex: 1;
     padding: 20px;
-    overflow-y: auto;
-    background: #f0f0f0;
+    overflow: auto;
+    background: #ba2a2a;
+    width: 100%;
 }
 
 .message {
@@ -20,6 +22,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: auto;
 }
 
 .input-container {
