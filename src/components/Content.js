@@ -7,7 +7,7 @@ import Chat from "../components/Chat";
 
 // Import other sections if needed
 
-function Content({ section, messages, message, setMessage, handleSendMessage, handleDeleteMessage, user }) {
+function Content({ section, messages, message, setMessage, handleSendMessage, handleDeleteMessage, user, fetchMessages }) {
     return (
         <div className="content">
             {section === 'home' && <Home />}
@@ -22,6 +22,7 @@ function Content({ section, messages, message, setMessage, handleSendMessage, ha
                     handleSendMessage={handleSendMessage}
                     handleDeleteMessage={handleDeleteMessage}
                     user={user} // CHANGED: Pass user to Chat
+                    fetchMessages={fetchMessages}
                 />
             )}
         </div>

@@ -65,3 +65,7 @@
 .menu ul li:last-child {
     border-bottom: none;
 }
+.toolbarHover:hover{
+    background-color: #007bff;
+    opacity: 0.8;
+}

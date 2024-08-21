@@ -30,6 +30,18 @@ function App() {
     const [user, setUser] = useState('');
     const [showUserPrompt, setShowUserPrompt] = useState(false);
 
+
+    const fetchMessages = async (page, limit) => {
+        try {
+            const response = await axios.get(`http://localhost:5000/messages?page=${page}&limit=${limit}`);
+            setMessages(response.data);
+        } catch (error) {
+            console.error("Error fetching messages:", error);
+            // Display an error message to the user or handle it in the UI
+        }
+    };
+
+
     useEffect(() => {
         axios.get('http://localhost:5000/messages')
             .then(response => setMessages(response.data));
@@ -140,6 +152,7 @@ function App() {
                     handleSendMessage={handleSendMessage}
                     handleDeleteMessage={handleDeleteMessage}
                     user={user} // Pass user to Content
+                    fetchMessages={fetchMessages}
                 />
             </div>
         </div>

@@ -20,12 +20,12 @@ const Toolbar = ({ onMenuClick }) => {
             </div>
             <nav className={`menu ${isOpen ? 'open' : ''}`}>
                 <ul>
-                    <li onClick={() => handleItemClick('home')}>HOME</li>
-                    <li onClick={() => handleItemClick('portfolio')}>PORTFOLIO</li>
-                    <li onClick={() => handleItemClick('history')}>HISTORY</li>
-                    <li onClick={() => handleItemClick('chat')}>CHAT</li>
-                    <li onClick={() => handleItemClick('contact')}>CONTACT</li>
-                    <li onClick={() => handleItemClick('light')}>LIGHT VERSION</li>
+                    <li className="toolbarHover" onClick={() => handleItemClick('home')}>HOME</li>
+                    <li className="toolbarHover" onClick={() => handleItemClick('portfolio')}>PORTFOLIO</li>
+                    <li className="toolbarHover" onClick={() => handleItemClick('history')}>HISTORY</li>
+                    <li className="toolbarHover" onClick={() => handleItemClick('chat')}>CHAT</li>
+                    <li className="toolbarHover" onClick={() => handleItemClick('contact')}>CONTACT</li>
+                    <li className="toolbarHover" onClick={() => handleItemClick('light')}>LIGHT VERSION</li>
                 </ul>
             </nav>
         </div>
