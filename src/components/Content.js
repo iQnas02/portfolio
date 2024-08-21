@@ -24,7 +24,11 @@ function Content({ section, messages, message, setMessage, handleSendMessage, ha
                     user={user} // CHANGED: Pass user to Chat
                     fetchMessages={fetchMessages}
                 />
-            )}
+
+
+                )}
+
+
         </div>
     );
 }

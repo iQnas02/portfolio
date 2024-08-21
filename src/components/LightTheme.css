@@ -1,0 +1,80 @@
+/* LightTheme.css */
+
+body, .App {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.toolbar-container {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu-icon .bar {
+    background-color: #333;
+}
+
+.menu {
+    background-color: #ffffff;
+}
+
+.menu ul li {
+    color: #333;
+}
+
+.menu ul li.toolbarHover:hover {
+    background-color: #ddd;
+}
+
+.skill-bar .skill-name,
+.skill-bar .skill-percentage {
+    color: #333;
+}
+
+.progress-bar {
+    background-color: #ddd;
+}
+
+.progress {
+    background-color: #4caf50;
+}
+
+.circular-progress-container .circle-bg {
+    stroke: #e0e0e0;
+}
+
+.circular-progress-container .circle-progress {
+    stroke: #76c7c0;
+}
+
+.circular-progress-container .percentage-text {
+    fill: #333;
+}
+
+.content {
+    background-color: #fff;
+}
+
+.message {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.message-time {
+    color: #999;
+}
+
+.input-container input {
+    background-color: #fff;
+    color: #333;
+}
+
+.input-container button {
+    background-color: #76c7c0;
+    color: #fff;
+}
+
+.pagination button {
+    background-color: #76c7c0;
+    color: #fff;
+}

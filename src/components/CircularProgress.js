@@ -1,5 +1,5 @@
 import React from 'react';
-import './CircularProgress.css';
+import '../components/CircularProgress.css';
 
 const CircularProgress = ({ percentage, label }) => {
     const radius = 54;
@@ -39,6 +39,7 @@ const CircularProgress = ({ percentage, label }) => {
                     dominantBaseline="middle"
                     textAnchor="middle"
                     className="percentage-text"
+                    style={{ fill: 'red' }}  // Apply color directly here
                 >
                     {`${percentage}%`}
                 </text>

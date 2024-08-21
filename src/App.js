@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Content from "./components/Content";
 import io from 'socket.io-client';
 import axios from 'axios';
+import './components/LightTheme.css'
 
 // Initialize socket connection
 const socket = io('http://localhost:5000');
@@ -13,8 +14,8 @@ function SkillBar({ skill, percentage }) {
     return (
         <div className="skill-bar">
             <div className="skill-info">
-                <span className="skill-name">{skill}</span>
-                <span className="skill-percentage">{percentage} %</span>
+                <span className="skill-name text-white">{skill}</span>
+                <span className="skill-percentage text-white">{percentage} %</span>
             </div>
             <div className="progress-bar">
                 <div className="progress" style={{ width: `${percentage}%` }}></div>
@@ -29,7 +30,7 @@ function App() {
     const [message, setMessage] = useState('');
     const [user, setUser] = useState('');
     const [showUserPrompt, setShowUserPrompt] = useState(false);
-
+    const [isLightTheme, setIsLightTheme] = useState(false);
 
     const fetchMessages = async (page, limit) => {
         try {
@@ -80,6 +81,8 @@ function App() {
     const handleMenuClick = (section) => {
         if (section === 'chat' && !user) {
             setShowUserPrompt(true);
+        } else if (section === 'light') {
+            setIsLightTheme(!isLightTheme); // Toggle theme
         } else {
             setSelectedSection(section);
         }
@@ -100,10 +103,23 @@ function App() {
         { skill: 'Node', percentage: 80 },
     ];
 
+    useEffect(() => {
+        // Retrieve theme from localStorage
+        const savedTheme = localStorage.getItem('isLightTheme');
+        if (savedTheme) {
+            setIsLightTheme(JSON.parse(savedTheme));
+        }
+    }, []);
+
+    useEffect(() => {
+        // Save theme to localStorage
+        localStorage.setItem('isLightTheme', JSON.stringify(isLightTheme));
+    }, [isLightTheme]);
+
     return (
-        <div className="App">
+        <div className={`App ${isLightTheme ? 'light-theme' : ''}`}>
             <div>
-                <Toolbar onMenuClick={handleMenuClick} />
+                <Toolbar onMenuClick={handleMenuClick} isLightTheme={isLightTheme}/>
             </div>
             <div className="d-flex">
                 <div className="leftSide d-flex flex-column">
@@ -153,6 +169,7 @@ function App() {
                     handleDeleteMessage={handleDeleteMessage}
                     user={user} // Pass user to Content
                     fetchMessages={fetchMessages}
+                    isLightTheme={isLightTheme}
                 />
             </div>
         </div>

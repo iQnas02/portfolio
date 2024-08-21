@@ -69,3 +69,21 @@
     background-color: #007bff;
     opacity: 0.8;
 }
+.toolbar-container.light-theme {
+    background-color: #ffffff;
+    color: #333;
+}
+.menu-icon.light-theme .bar {
+    background-color: #333;
+}
+.menu.light-theme {
+    background-color: #ffffff;
+    color: #333;
+}
+.menu ul li.toolbarHover:hover {
+    background-color: #555;
+}
+
+.menu ul li.toolbarHover.light-theme:hover {
+    background-color: #ddd;
+}

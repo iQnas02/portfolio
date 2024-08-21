@@ -1,19 +1,66 @@
+/* Extended Dark Mode Styles */
+
+/* General App Styles */
 .App {
   text-align: center;
-  background-color: #333333;
+  background-color: #1E1E2F; /* Dark Slate Blue */
+  color: #FFFFFF; /* Pure White */
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.leftSide{
-  background-color: rgb(207, 202, 202);
+/* Light Theme Override */
+.light-theme .App {
+  background-color: #F4F4F4; /* Light Background */
+  color: #333; /* Dark Text */
+}
+
+/* Sidebar (LeftSide) */
+.leftSide {
+  background-color: #28293D; /* Dark Indigo */
   width: 300px;
   height: 1300px;
   margin-left: 150px;
+  color: #e50c0c;
+  transition: background-color 0.3s, color 0.3s;
 }
-.flex-1{
-  flex: 1;
+
+.light-theme .leftSide {
+  background-color: #CFCACA; /* Light Sidebar */
+  color: #333;
 }
+
+/* Toolbar */
+.toolbar-container {
+  background-color: #2D2D3F; /* Charcoal Gray */
+  padding: 20px;
+  color: #FFFFFF;
+}
+
+.light-theme .toolbar-container {
+  background-color: #F4F4F4;
+  color: #333;
+}
+
+.toolbarHover {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.toolbarHover:hover {
+  background-color: #444554; /* Graphite */
+}
+
+.light-theme .toolbarHover:hover {
+  background-color: #E0E0E0;
+}
+
+/* CircularProgress Component */
 .skill-bar {
   margin-bottom: 20px;
+  color: #FFFFFF;
 }
 
 .skill-info {
@@ -21,98 +68,164 @@
   justify-content: space-between;
   margin-bottom: 5px;
   padding-right: 5px;
+  color: #B0B0B0; /* Gray for secondary text */
 
 }
 
 .skill-name {
   font-weight: bold;
   padding-left: 5px;
+color: #e50c0c;
 }
 
 .progress-bar {
-  background-color: #e0e0e0;
+  background-color: #323247; /* Dark Steel */
   border-radius: 5px;
   overflow: hidden;
   padding: 10px;
+  transition: background-color 0.3s;
 }
 
 .progress {
-  background-color: #ff6b6b;
+  background-color: #FFA500; /* Amber */
   height: 10px;
   border-radius: 5px;
+  transition: width 0.3s;
 }
-.homeImg{
+
+.light-theme .skill-bar {
+  color: #333;
+}
+
+.light-theme .progress-bar {
+  background-color: #E0E0E0;
+}
+
+/* Home Image */
+.homeImg {
   width: 60%;
   height: 30%;
-
-}
-.smallImg{
-  height: 50%;
-  width: 80%;
-  border-radius: 30px;
+  border-radius: 10px;
   object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* User Input */
 .user-input {
   padding: 10px;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e0e0e0;
+  background-color: #28293D; /* Dark Indigo */
+  border-bottom: 1px solid #666;
   display: flex;
   justify-content: center;
+  color: #FFFFFF;
 }
 
 .user-input input {
   padding: 8px;
   font-size: 14px;
   width: 200px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #666;
   border-radius: 4px;
+  background-color: #323247; /* Dark Steel */
+  color: #FFFFFF;
 }
+
+.light-theme .user-input {
+  background-color: #F8F9FA;
+  color: #333;
+}
+
+.light-theme .user-input input {
+  background-color: #FFF;
+  color: #333;
+  border: 1px solid #E0E0E0;
+}
+
+/* User Prompt */
 .user-prompt {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: #2D2D3F; /* Charcoal Gray */
+  color: #FFFFFF;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.light-theme .user-prompt {
+  background-color: #FFF;
+  color: #333;
+  box-shadow: none;
 }
 
 .user-prompt input {
-  padding: 8px;
-  font-size: 14px;
-  width: 200px;
-  border: 1px solid #e0e0e0;
+  background-color: #444554; /* Graphite */
+  color: #FFFFFF;
+  border: 1px solid #666;
   border-radius: 4px;
-  margin-right: 10px;
-}
-
-.user-prompt button {
-  padding: 8px 12px;
-  font-size: 14px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.user-prompt button:hover {
-  background-color: #0056b3;
-}
-.messages-container {
-  height: 400px; /* Adjust the height as needed */
-  overflow-y: scroll;
-  border: 1px solid #ccc;
   padding: 10px;
 }
 
+.light-theme .user-prompt input {
+  background-color: #FFF;
+  color: #333;
+  border: 1px solid #E0E0E0;
+}
+
+.user-prompt button {
+  background-color: #4A90E2; /* Cornflower Blue */
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.user-prompt button:hover {
+  background-color: #357ABD; /* Darker shade for hover */
+}
+
+/* Messages Container */
+.messages-container {
+  height: 400px;
+  overflow-y: scroll;
+  border: 1px solid #444;
+  padding: 20px;
+  background-color: #28293D; /* Dark Indigo */
+  color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.light-theme .messages-container {
+  background-color: #F1F1F1;
+  color: #333;
+  border: 1px solid #CCC;
+}
+
+/* Individual Message */
 .message {
   margin-bottom: 10px;
+  background-color: #323247; /* Dark Steel */
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .message-time {
   font-size: 0.8em;
+  color: #B0B0B0;
+}
+
+.light-theme .message-time {
   color: #888;
+}
+
+/* Accent Dividers and Borders */
+.divider {
+  background-color: #444554; /* Graphite */
+  height: 1px;
+  margin: 10px 0;
+}
+
+.border-highlight {
+  border: 2px solid #FF6B6B; /* Light Coral */
 }
