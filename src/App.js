@@ -125,7 +125,7 @@ function App() {
                 <div className="leftSide d-flex flex-column">
                     <div className="mainTopic p-5">
                         <img className="smallImg"
-                             src="https://scontent.fkun1-2.fna.fbcdn.net/v/t39.30808-6/430484655_7724670957566274_2614109157920535646_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=XidJhxgVONsQ7kNvgFl7iaD&_nc_ht=scontent.fkun1-2.fna&oh=00_AYDEE9ohRdfaVKAvQ5n_6iA2t_qaECfecqBd9rgD2fZTug&oe=66B7D95D"
+                             src="https://scontent.fkun1-2.fna.fbcdn.net/v/t39.30808-6/430484655_7724670957566274_2614109157920535646_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=zqr2p71FlVwQ7kNvgE4LvBP&_nc_ht=scontent.fkun1-2.fna&oh=00_AYA6ve_iFH7_OOjsPBAGHifxG9y1EhDoTyhT4F2WdpGUFQ&oe=66CB9FDD"
                              alt="mano nuotrauka" />
                         <h6 className="text-white">Ignas Urbonas</h6>
                         <div className="d-flex flex-column">

@@ -229,3 +229,9 @@ color: #e50c0c;
 .border-highlight {
   border: 2px solid #FF6B6B; /* Light Coral */
 }
+.smallImg{
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
